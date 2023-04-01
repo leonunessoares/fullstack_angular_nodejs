@@ -1,0 +1,33 @@
+<div class="container">
+  
+    <div class="d-flex justify-content-between">
+      <h4>Editar Pessoa</h4>
+      <a href="#" routerLink="/pessoa/index" class="btn btn-primaryt">Voltar</a>
+    </div>
+
+    <hr>
+
+    <form [formGroup]="form" (ngSubmit)="submit()">
+
+
+        <div class="form-group row">
+            <div class="col-md-6 ">
+              <label for="title">Nome:</label>
+              <input
+                formControlName="nome"
+                [(ngModel)]="pessoa.nome"
+                id="nome"
+                type="text"
+                class="form-control">
+                <div *ngIf="f['nome'].touched && f['nome'].invalid" class="alert alert-danger">
+                  <div *ngIf="f['nome'].errors && f['nome'].errors['required']">*Nome é obrigatório!</div>
+                  <div *ngIf="f['nome'].errors && f['nome'].errors['minlength']">*Favor inserir pelo o menos 6 caracteres.</div>
+                  <div *ngIf="f['nome'].errors && f['nome'].errors['maxlength']">*Favor inserir até 30 caracteres.</div>
+                </div>
+            </div>
+        </div>
+
+        <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Alterar</button>
+    </form>
+</div>
+

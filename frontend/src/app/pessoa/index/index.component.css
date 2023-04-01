@@ -1,0 +1,39 @@
+.tabela{
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 8px;
+    margin-top: -2px;
+   }
+
+td {
+    
+    border-left-width: 0;
+    min-width: 120px;
+    height: 18px;
+  }
+
+  td:first-child {
+    border-left-width: 1px;
+  }
+  
+.tabela_acao{
+    width: 10%;
+   }
+
+
+.tabela_id{
+    width: 10%;
+   }
+
+.excluir{
+    color: red;
+    font-weight: bold;
+   }
+
+.alterar{
+    font-weight: bold;
+   }
+
+.tabela_nome{
+    width: 80%;
+   }

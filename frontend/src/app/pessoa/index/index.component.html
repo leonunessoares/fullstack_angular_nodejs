@@ -1,0 +1,34 @@
+<section>
+
+    <div class="d-flex justify-content-between">
+      <h4>Lista de Pessoas</h4>
+      <a routerLink="/pessoa/create" class="btn btn-primary">Novo</a>
+    </div>
+
+    <br>
+    
+    <table class="tabela">
+      <tr>
+        <th class="tabela_acao"></th>
+        <th class="tabela_id">ID</th>
+        <th class="tabela_nome">NOME COMPLETO</th>
+      </tr>
+      <tr *ngFor="let pessoa of pessoas">
+        <div ngbDropdown class="dropdown">
+          <button ngbDropdownToggle class="btn btn-success" type="button" id="dropdownMenuButton1" aria-expanded="false">
+        Ação
+        </button>
+          <ul ngbDropdownMenu aria-labelledby="dropdownMenuButton1">
+            <li><a ngbDropdownItem href="#" [routerLink]="['/pessoa/', 'edit', pessoa.id ]" class="alterar">Alterar</a></li>
+            <li><a ngbDropdownItem (click)="deletePessoa(pessoa.id)" class="excluir">Excluir</a></li>
+          </ul>
+        </div>
+
+        <td class="tabela_id">{{ pessoa.id }}</td>
+        <td class="tabela_nome">{{ pessoa.nome }}</td>
+        
+      </tr>
+      <br>
+    </table>
+
+ </section>
