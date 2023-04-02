@@ -11,7 +11,7 @@ import { Pessoa } from './pessoa';
 })
 export class PessoaService {
 
-  private apiURL = "http://localhost:8000/api/pessoa/";
+  private apiURL = "http://localhost:3000/pessoa/";
 
   httpOptions = {
      headers: new HttpHeaders({

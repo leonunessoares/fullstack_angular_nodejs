@@ -24,7 +24,6 @@ export class EditComponent implements OnInit {
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params['idPessoa'];
-    console.log('id='+ this.id);
     this.pessoaService.find(this.id).subscribe((data: Pessoa)=>{
       this.pessoa = data;
     });
