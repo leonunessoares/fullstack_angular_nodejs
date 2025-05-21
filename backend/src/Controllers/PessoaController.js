@@ -14,9 +14,9 @@ exports.post = (req, res) => {
   
       [nome],
         (err, data) => {
-         res.status(201).json({
+         res.status(200).json({
            error: null,
-           message: "Registro inserido com sucesso!",
+           message: err.message,
          });
        }
       );
@@ -36,12 +36,18 @@ exports.post = (req, res) => {
         "UPDATE pessoa_node SET nome = $1 WHERE id = $2",
         [nome, id],
         (err, data) => {
-          if (err) throw err;
-          
+          if (err) {
+            res.status(500).json({
+              message: "falha",
+              status: "500"
+            });
+            console.log(message);
+          }else{
             res.status(201).json({
               err: null,
-              message: "Registro atualizado com sucesso",
+              message: "Registro 2 com sucesso",
             });
+          }
           }
         );
       } catch (error) {
